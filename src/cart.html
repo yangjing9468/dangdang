@@ -1,0 +1,662 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>购物车-当当网</title>
+
+    <script src="js/jquery_1.8.js"></script>
+    <script src="js/jquery_cookie.js"></script>
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <link href="http://10.31.158.62/dangdang/src/css/cart/shopping%20chart.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://10.31.158.62/dangdang/src/css/cart/size%20color.css">
+    <link rel="stylesheet" href="http://10.31.158.62/dangdang/src/css/cart/style.css">
+    <link rel="stylesheet" type="text/css" href="http://a.dangdang.com/smart_new.css">
+
+    <link rel="stylesheet" href="http://10.31.158.62/dangdang/src/css/cart/win%20login.css">
+
+</head>
+
+<body style="padding-bottom:82px">
+
+    <link href="http://10.31.158.62/dangdang/src/css/cart/header.css" rel="stylesheet" type="text/css">
+
+
+    <div id="hd">
+        <div id="tools">
+            <div class="tools">
+                <div class="ddnewhead_operate" dd_name="顶链接">
+                    <ul class="ddnewhead_operate_nav">
+                        <li class="ddnewhead_cart"><a href="http://10.31.158.62/dangdang/src/cart.html" name="购物车" dd_name="购物车"><i class="icon_card"></i>购物车<b id="cart_items_count">0</b></a></li>
+                        <li><a target="_blank" href="javascript:;" name="我的订单" dd_name="我的订单" rel="nofollow">我的订单<b id="unpaid_num" style="color:#ff2832;font:bold 12px Arial;"></b></a></li>
+                        <li><a target="_blank" href="javascript:;" name="我的云书房" dd_name="我的云书房">我的云书房</a></li>
+                        <li class="my_dd"><a class="menu_btn" target="_blank" href="javascript:;" name="我的当当" dd_name="我的当当" id="a_myddchannel" onmouseover="" onmouseout="">我的当当</a>
+                            <ul class="ddnewhead_gcard_list" id="__ddnav_mydd" onmouseover="" onmouseout="">
+                                <li><a target="_blank" href="javascript:;myOrder" name="mydd_7" dd_name="新_我的订单">我的订单</a></li>
+                                <li><a target="_blank" href="http://shopping.dangdang.com/shoppingcart/shopping_cart.aspx" name="mydd_8" dd_name="新_购物车" rel="nofollow">购物车</a></li>
+                                <li><a target="_blank" href="javascript:;mypoint?ref=my-0-L" name="mydd_4" dd_name="我的银铃铛" rel="nofollow">银铃铛抵现</a></li>
+                                <li><a target="_blank" href="javascript:;myFavorite" name="mydd_1" dd_name="我的收藏" rel="nofollow">我的收藏</a></li>
+                                <li><a target="_blank" href="http://noncash.dangdang.com/balance/" name="mydd_5" dd_name="我的余额" rel="nofollow">我的余额</a></li>
+                                <li><a target="_blank" href="http://comment.dangdang.com/comment" name="mydd_4" dd_name="我的评论" rel="nofollow">我的评论</a></li>
+                                <li><a target="_blank" href="http://newaccount.dangdang.com/payhistory/mycoupon.aspx" name="mydd_2" dd_name="礼券/礼品卡" rel="nofollow">礼券/礼品卡</a></li>
+                            </ul>
+                        </li>
+                        <li><a target="_blank" href="javascript:;" name="mydd_7" dd_name="小说投稿">小说投稿</a></li>
+                        <li><a target="_blank" href="javascript:;" dd_name="我要出书">我要出书</a></li>
+                        <li><a class="menu_btn" href="javascript:void(0);" style="cursor:default;" name="qycg" dd_name="企业采购" id="a_qycgchannel" onmouseover="" onmouseout="">企业采购</a>
+                            <ul class="ddnewhead_gcard_list" id="__ddnav_qycg" onmouseover="" onmouseout="">
+                                <li><a target="_blank" href="javascript:;" name="qycg_1" dd_name="大宗采购">大宗采购</a></li>
+                                <li><a target="_blank" href="javascript:;" name="qycg_2" dd_name="礼品卡采购">礼品卡采购</a></li>
+                                <li><a target="_blank" href="javascript:;" name="gqycg_3" dd_name="礼品卡激活" rel="nofollow">礼品卡激活</a></li>
+                                <li><a target="_blank" href="javascript:;" name="qycg_4" dd_name="礼品卡使用">礼品卡使用</a></li>
+                                <li><a target="_blank" href="javascript:;goods?type=mall" name="qycg_6" dd_name="礼品卡专区">礼品卡专区</a></li>
+                            </ul>
+                        </li>
+                        <li class="hover "><a class="menu_btn" href="javascript:void(0);" style="cursor:default;" name="ddkf_0" dd_name="客户服务" id="a_bzzxchannel" onmouseover="" onmouseout="">客户服务</a>
+                            <ul class="ddnewhead_gcard_list" id="__ddnav_bzzx" onmouseover="" onmouseout="">
+                                <li><a target="_blank" href="javascript:;/index" name="ddkf_2" dd_name="帮助中心">帮助中心</a></li>
+                                <li><a target="_blank" href="javascript:;" name="ddkf_3" dd_name="自助退换货">自助退换货</a></li>
+                                <li><a target="_blank" href="http://order.dangdang.com/InvoiceApply/InvoiceOnlineReissue.aspx" name="tsjy_2" dd_name="自助发票" rel="nofollow">自助发票</a></li>
+                                <li><a target="_blank" href="javascript:;/details/page206" name="ddkf_4" dd_name="联系客服">联系客服</a></li>
+                                <li><a target="_blank" href="javascript:;/details/page206" name="tsjy_1" dd_name="我要投诉" rel="nofollow">我要投诉</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="ddnewhead_welcome" display="none;">
+                        <span id="nickname">欢迎光临当当，请<a dd_name="登录" href="http://10.31.158.62/dangdang/src/login.html" target="_self" rel="nofollow" class="login_link">登录</a><a dd_name="成为会员" href="javascript:PageTopRegist();" target="_self" rel="nofollw">成为会员</a></span>
+                        <div class="tel_pop" style="display:none" id="__ddnav_sjdd" onmouseover="" onmouseout="">
+                            <a target="_blank" href="http://t.dangdang.com/20130220_ydmr" class="title"><i class="icon_tel"></i>手机当当</a><i class="title_shadow"></i>
+                            <ul class="tel_pop_box">
+                                <li><a href="http://t.dangdang.com/20130220_ydmr" dd_name="手机二维码"><span>当当手机客户端</span><img src="//img3.ddimg.cn/00363/doc/erweima2.png"><span class="text">随手查订单<br>随时享优惠</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="new_head_znx" id="znx_content" style="display:none;"></div>
+                </div>
+            </div>
+        </div>
+        <div id="header_end"></div>
+        <!--CreateDate  2019-07-06 00:00:01-->
+    </div>
+    <form id="bootpagetopSearch" name="bootpagetopSearch" method="GET"></form>
+
+    <div class="shoppingcart_wrapper" id="ad_cpt_11850"></div>
+    <div class="logo_line">
+        <div class="w960">
+            <div class="shopping_procedure"><span class="current">我的购物车</span><span>填写订单</span><span>完成订单</span></div>
+            <div class="logo">
+                <a href="http://www.dangdang.com"><img src="./img/dd_logo.jpg" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <div class="add_line" id="district" style="display: none;">
+        <div class="w960">
+            <div class="address" id="dp_adress">
+                <span class="icon_adr">&nbsp;</span>配送地址：
+                <div class="select_add">
+                    <span class="text fn-select-address">北京市顺义区</span>
+                    <div class="area_pop" style="display:none;">
+                        <a href="javascript:district.close()" class="close"></a>
+                        <ul class="tab">
+                            <li id="ap_province" class="fn-show-province"><a href="javascript:void(0)" id="selected_111">北京</a></li>
+                            <li id="ap_city" class="fn-show-city"><a href="javascript:district.show_city_init(this)" id="selected_1">北京市</a></li>
+                            <li id="ap_area" class="fn-show-area choose"><a href="javascript:district.show_area_init(this)" id="selected_101">顺义区</a></li>
+                            <li id="ap_village" style="display:none" class="fn-show-village"><a href="javascript:district.show_village_init(this)" id="selected_0">请选择</a></li>
+                        </ul>
+                        <ul class="list list_notaligned fn-adress">
+
+                        </ul>
+                    </div>
+                </div>
+                <!--<a href="#" class="tip"></a>-->
+                <span class="tip_c" style="display:none;">针对不同配送地址，您的货物可能出现缺货或无货状态，敬请谅解。</span>
+            </div>
+        </div>
+    </div>
+    <div class="w960" id="showTip">
+
+
+        <!-- 结算时 商品SPU限购提示窗口 start-->
+        <div id="spuPromoLimitDiv" class="pop" style="left:50%; top:50%; margin:-200px 0 0 -253px; position: fixed; z-index: 1004; display: none;">
+            <a class="close"></a>
+            <div class="pop_title">商品限购</div>
+            <div class="popup_limit"></div>
+            <div class="btn_bar limit_bar">
+                <a class="btn_red">确定</a><a class="pop_btn">取消</a>
+            </div>
+        </div>
+        <!-- 结算时 商品SPU限购提示窗口 end-->
+
+
+        <!--银铃铛惠购弹窗-->
+        <div id="pointFavorErrorPageForCheckOut">
+            <div class="fullScreen"></div>
+            <div class="points_alert">
+                <div class="head_title">
+                    <div class="title_name">银铃铛不足,请调整兑换商品或兑换数量</div>
+                    <div class="close"></div>
+                </div>
+                <div class="remind_info">所需银铃铛 <span class="sort" id="allNeedPointNum">500</span> 分，我的银铃铛 <span class="sort" id="userHasPointNum">100</span> 分</div>
+                <div class="list_scroll">
+                    <div class="list_p" id="usePointFavorProductInfoList">
+
+                    </div>
+                </div>
+                <div class="btn_confirm"><span class="btn confirm">确定</span><span class="btn cancel">取消</span></div>
+            </div>
+        </div>
+
+        <div id="giftDiv" class="pop_tip gift_select" style="left:50%; top:50%; margin:-200px 0 0 -302px; position: fixed; z-index: 1001; display: none;">
+            <div class="head_title">
+                <div class="title_name">您购物车中以下商品可选为赠品</div>
+                <div class="close"></div>
+            </div>
+            <div class="products_sort" id="giftArea">
+
+            </div>
+            <a href="javascript:void(0)" class="btn_b fn-back-cart">返回购物车选赠品</a><a id="gift_checkout" href="#" class="btn_b">继续结算，土豪任性不要了</a>
+        </div>
+        <div class="login_tip" style="display: none;">
+            <span class="icon"></span>
+        </div>
+        <div id="remove_pop" class="login_tip" style="display: none;">
+            <span class="icon"></span>
+        </div>
+        <div id="clear_pop" class="login_tip" style="display: none;">
+            <span class="icon"></span>
+        </div>
+
+        <!-- 缺货 pop-->
+        <div id="stockShortDiv" class="pop_stock" style="left:50%; top:50%; margin:-200px 0 0 -253px; position: fixed; z-index: 1004; display: none;">
+            <a class="close"></a>
+            <div class="pop_title">以下商品缺货，为您修改到最大可购买数量</div>
+            <div class="popup_out">
+                <ul class="out_list">
+                </ul>
+            </div>
+            <div class="btn_bar limit_bar">
+                <a href="#" class="btn_red">确定</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="w960" id="cart" style="display: none;">
+        <div id="LoginFalse" class="login_tip"><span class="icon"></span>您还没有登录！登录后购物车的商品将保存到您的帐号中<a href="javascript:;" class="btn">立即登录</a></div>
+        <ul class="shopping_title" id="j_carttitle">
+            <li class="f1"><a id="j_selectall" href="javascript:void(0)" class="checknow fn-checkall" dd_name="全选">选中</a>全选</li>
+            <li class="f2">商品信息</li>
+            <li class="f3">单价（元）</li>
+            <li class="f4">数量</li>
+            <li class="f4">金额（元）</li>
+            <li class="f5">操作</li>
+        </ul>
+        <div class="fn-shops" id="J_cartContent"></div>
+        <div class="shoppingcart_loading" id="J_cartLoading" style="display: none;"><img height="30" width="30" src="images/loading.gif"></div>
+    </div>
+    <!--<div class="w960" id="weipinboxarea" style = "display: none"><div class="login_tip"><span class="icon"></span>购物车中有<a id="weipinhui" href="http://v.dangdang.com" class="icon_eve weipin">尾品汇</a><a id="zuizhidang" href="http://z.dangdang.com" class="icon_eve zhidang">z值当</a>商品，请在<span class="time" id="J_limitedMinute"></span><span class="time" id="J_limitedSecond"></span>内结算.<a herf="javascript:;" class="more fn-vnewz-tips">了解限时结算&gt;&gt;</a></div></div>-->
+    <div id="hide_div" style="height:0px;visibility:hidden;"></div>
+    <div style="position:static;bottom:-20px;z-index: 101;width:100%;left:0px;">
+        <div class="shopping_total" id="J_totalMoneyBlock" style="display: none;">
+            <div class="shopping_total_right">
+                <a class="total_btn fn-checkout" href="javascript:;" id="checkout_btn" dd_name="结算">结&nbsp;&nbsp;算</a>
+                <div class="subtotal">
+                    <p><span class="cartsum">总计(不含运费)：</span><span id="payAmount" class="price">¥0.00</span></p>
+
+                    <p><span class="cartsum">已节省：</span><span id="totalFavor">¥0.00</span></p>
+                </div>
+                <div class="pop_del pop_ebook fn-ck" id="ck_tip" style="display:none">
+                    <h1>电子书重复购买提示</h1>
+                    <p></p>
+                    <a id="ck_link" href="#" class="pop_btn">朕知道了</a>
+                </div>
+            </div>
+            <div class="shopping_total_left" id="J_leftBar">
+                <a id="j_selectall2" href="javascript:void(0)" class="checknow fn-checkall" dd_name="全选">选中</a>全选
+                <a id="j_removeproducts" href="javascript:void(0)" class="fn-batch-remove" dd_name="批量删除按钮">批量删除</a>
+                <span>已选择0件商品</span>
+                <div id="J_batchRemoveProductBox" style="display: none;z-index:-1;left:0px;" class="pop_del">
+                    <p>您确定要批量删除商品吗？</p><a href="javascript:;" class="pop_btn fn-confirm-batchremovebox">确定</a><a href="javascript:;" class="pop_btn fn-close-batchremovebox">取消</a></div>
+                <div id="J_batchAddWishBox" style="display: none;z-index:-1;left:85px;" class="pop_del col ">
+                    <p>您确定要批量移入收藏吗？</p><a href="javascript:;" class="pop_btn fn-confirm-batchaddwish">确定</a><a href="javascript:;" class="pop_btn fn-close-batchwishbox">取消</a></div>
+            </div>
+        </div>
+    </div>
+    <div id="J_errorBox" style="display: none;z-index:102" class="pop_del col">
+        <p></p>
+        <a class="pop_btn fn-close-removebox" href="javascript:;">确定</a>
+    </div>
+    <div id="J_addToWishTipHtml" style="display: none; position: absolute;"></div>
+    <div id="J_addWishBox" style="display: none" class="pop_del col ">
+        <p>移入收藏后，将不在购物车显示，是否继续操作？</p><a href="javascript:;" class="pop_btn fn-confirm-addwish">确定</a><a href="javascript:;" class="pop_btn fn-close-wishbox">取消</a></div>
+    <div id="J_removeProductBox" style="display: none;" class="pop_del">
+        <p>您确定要删除商品吗？</p><a href="javascript:;" class="pop_btn fn-confirm-removebox">确定</a><a href="javascript:;" class="pop_btn fn-close-removebox">取消</a></div>
+    <div id="J_removeGiftBox" style="display: none;" class="pop_del">
+        <p>您确定要删除赠品吗？</p><a href="javascript:;" class="pop_btn fn-confirm-removegiftbox">确定</a><a href="javascript:;" class="pop_btn fn-close-removebox">取消</a></div>
+    <div class="w960">
+        <div class="empty" id="empty" style="">
+            <p>您的购物车还是空的，您可以：</p>
+            <a href="javascript:;" class="btn">立即登录</a>登录后购物车的商品将保存到您的账号中，或者<a href="http://10.31.158.62/dangdang/src/index.html">去逛逛</a>
+        </div>
+        <div class="shopping_ads" id="fn-weinituijian" style="">
+            <div class="ads_tab">为您推荐</div>
+            <div class="ads_box">
+                <a href="javascript:;" class="arrow left"></a>
+                <a href="javascript:;" class="arrow right"></a>
+                <ul class="ads_num">
+                    <li class="pageTab on">1</li>
+                    <li class="pageTab">2</li>
+                    <li class="pageTab">3</li>
+                    <li class="pageTab">4</li>
+                    <li class="pageTab">5</li>
+                </ul>
+                <div class="show_list">
+                    <div class="big_box">
+                        <ul class="show_box line2" request_id="201907060942069684_000054877382671550">
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;" class="gpic" title="人间失格（日本小说家太宰治的自传体小说）"><img src="http://img3x5.ddimg.cn/56/4/23761145-1_b_2.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;" target="_blank">人间失格（日本小说家太宰治的自传体小说）</a></p>
+                                <p><span class="price">¥17.50</span></p><a href="javascript:;" data-item="23761145" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/23761145.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>1206487</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/23579654.html#ddclick_reco_cart_foru" class="gpic" title="三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！"><img src="http://img3x4.ddimg.cn/32/35/23579654-1_b_3.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/23579654.html#ddclick_reco_cart_foru" target="_blank">三体：全三册 刘慈欣代表作，亚洲首部“雨果奖”获奖作品！</a></p>
+                                <p><span class="price">¥55.80</span></p><a href="javascript:;" data-item="23579654" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/23579654.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>764407</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/25137790.html#ddclick_reco_cart_foru" class="gpic" title="活着（2017年新版）"><img src="http://img3x0.ddimg.cn/7/27/25137790-1_b_2.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/25137790.html#ddclick_reco_cart_foru" target="_blank">活着（2017年新版）</a></p>
+                                <p><span class="price">¥28.00</span></p><a href="javascript:;" data-item="25137790" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/25137790.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>2203050</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/25252408.html#ddclick_reco_cart_foru" class="gpic" title="神奇校车·图画书版（全12册，新增《科学博览会》1册）"><img src="http://img3x8.ddimg.cn/82/19/25252408-1_b_19.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/25252408.html#ddclick_reco_cart_foru" target="_blank">神奇校车·图画书版（全12册，新增《科学博览会》1册）</a></p>
+                                <p><span class="price">¥148.50</span></p><a href="javascript:;" data-item="25252408" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/25252408.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>1048314</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/26921715.html#ddclick_reco_cart_foru" class="gpic" title="人生海海（莫言盛赞！董卿、高晓松反复阅读，杨洋、李健倾力推荐！2019麦家新作）"><img src="http://img3x5.ddimg.cn/51/34/26921715-1_b_2.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/26921715.html#ddclick_reco_cart_foru" target="_blank">人生海海（莫言盛赞！董卿、高晓松反复阅读，杨洋、李健倾力推荐！2019麦家新作）</a></p>
+                                <p><span class="price">¥55.00</span></p><a href="javascript:;" data-item="26921715" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/26921715.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>61945</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/23990140.html#ddclick_reco_cart_foru" class="gpic" title="正面管教(修订版)"><img src="http://img3x0.ddimg.cn/64/6/23990140-1_b_7.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/23990140.html#ddclick_reco_cart_foru" target="_blank">正面管教(修订版)</a></p>
+                                <p><span class="price">¥38.00</span></p><a href="javascript:;" data-item="23990140" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/23990140.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>792658</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/25238195.html#ddclick_reco_cart_foru" class="gpic" title="追风筝的人（2018年新版）"><img src="http://img3x5.ddimg.cn/26/14/25238195-1_b_3.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/25238195.html#ddclick_reco_cart_foru" target="_blank">追风筝的人（2018年新版）</a></p>
+                                <p><span class="price">¥36.00</span></p><a href="javascript:;" data-item="25238195" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/25238195.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>2411210</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/23444350.html#ddclick_reco_cart_foru" class="gpic" title="神奇校车·桥梁书版（全20册）"><img src="http://img3x0.ddimg.cn/61/3/23444350-1_b_4.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/23444350.html#ddclick_reco_cart_foru" target="_blank">神奇校车·桥梁书版（全20册）</a></p>
+                                <p><span class="price">¥147.00</span></p><a href="javascript:;" data-item="23444350" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/23444350.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>700752</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/23604128.html#ddclick_reco_cart_foru" class="gpic" title="皮囊（畅销300万册的国民读本，刘德华、李敬泽作序。繁体版面世即进入台湾诚品、博客来畅销榜单）"><img src="http://img3x8.ddimg.cn/53/15/23604128-1_b_13.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/23604128.html#ddclick_reco_cart_foru" target="_blank">皮囊（畅销300万册的国民读本，刘德华、李敬泽作序。繁体版面世即进入台湾诚品、博客来畅销榜单）</a></p>
+                                <p><span class="price">¥39.80</span></p><a href="javascript:;" data-item="23604128" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/23604128.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>723606</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/23427436.html#ddclick_reco_cart_foru" class="gpic" title="写给儿童的中国历史（全14册）"><img src="http://img3x6.ddimg.cn/76/35/23427436-1_b_4.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/23427436.html#ddclick_reco_cart_foru" target="_blank">写给儿童的中国历史（全14册）</a></p>
+                                <p><span class="price">¥337.30</span></p><a href="javascript:;" data-item="23427436" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/23427436.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>598392</span>位用户评价</a></p>
+                            </li>
+                        </ul>
+                        <ul class="show_box line2" request_id="201907060942069684_000054877382671550" style="display: none;">
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/26511525.html#ddclick_reco_cart_foru" class="gpic" title="斗罗大陆4 终极斗罗3 唐家三少"><img src="http://img3x5.ddimg.cn/18/26/26511525-1_b_5.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/26511525.html#ddclick_reco_cart_foru" target="_blank">斗罗大陆4 终极斗罗3 唐家三少</a></p>
+                                <p><span class="price">¥24.00</span></p><a href="javascript:;" data-item="26511525" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/26511525.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>5205</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/23751637.html#ddclick_reco_cart_foru" class="gpic" title="浮生六记（汪涵、胡歌推荐，畅销300万册。沈复给芸娘的绝美情书）【果麦经典】"><img src="http://img3x7.ddimg.cn/52/5/23751637-1_b_34.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/23751637.html#ddclick_reco_cart_foru" target="_blank">浮生六记（汪涵、胡歌推荐，畅销300万册。沈复给芸娘的绝美情书）【果麦经典】</a></p>
+                                <p><span class="price">¥32.00</span></p><a href="javascript:;" data-item="23751637" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/23751637.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>982605</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/24175371.html#ddclick_reco_cart_foru" class="gpic" title="月亮与六便士（新版未删节！2018当当名著桂冠！2017豆瓣阅读桂冠！上海国际学校指定必读译本！）作家榜经典文库"><img src="http://img3x1.ddimg.cn/66/15/24175371-1_b_92.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/24175371.html#ddclick_reco_cart_foru" target="_blank">月亮与六便士（新版未删节！2018当当名著桂冠！2017豆瓣阅读桂冠！上海国际学校指定必读译本！）作家榜经典文库</a></p>
+                                <p><span class="price">¥33.80</span></p><a href="javascript:;" data-item="24175371" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/24175371.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>627892</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/22819334.html#ddclick_reco_cart_foru" class="gpic" title="围城"><img src="http://img3x4.ddimg.cn/32/28/22819334-1_b_3.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/22819334.html#ddclick_reco_cart_foru" target="_blank">围城</a></p>
+                                <p><span class="price">¥24.20</span></p><a href="javascript:;" data-item="22819334" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/22819334.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>740372</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/25259300.html#ddclick_reco_cart_foru" class="gpic" title="流浪的地球（刘慈欣著，无删节无改写，大人孩子均可阅读，此版本当当网销量遥遥领先！根据本书改编的同名电影2019春节上映。）"><img src="http://img3x0.ddimg.cn/44/29/25259300-1_b_8.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/25259300.html#ddclick_reco_cart_foru" target="_blank">流浪的地球（刘慈欣著，无删节无改写，大人孩子均可阅读，此版本当当网销量遥遥领先！根据本书改编的同名电影2019春节上映。）</a></p>
+                                <p><span class="price">¥21.80</span></p><a href="javascript:;" data-item="25259300" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/25259300.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>209486</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/25285092.html#ddclick_reco_cart_foru" class="gpic" title="天才在左 疯子在右(2018全新完整版)"><img src="http://img3x2.ddimg.cn/96/32/25285092-1_b_4.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/25285092.html#ddclick_reco_cart_foru" target="_blank">天才在左 疯子在右(2018全新完整版)</a></p>
+                                <p><span class="price">¥24.90</span></p><a href="javascript:;" data-item="25285092" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/25285092.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>1150824</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/23778791.html#ddclick_reco_cart_foru" class="gpic" title="少年读史记（套装全5册）"><img src="http://img3x1.ddimg.cn/80/1/23778791-1_b_4.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/23778791.html#ddclick_reco_cart_foru" target="_blank">少年读史记（套装全5册）</a></p>
+                                <p><span class="price">¥95.00</span></p><a href="javascript:;" data-item="23778791" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/23778791.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>523823</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/27878722.html#ddclick_reco_cart_foru" class="gpic" title="小孩（大冰2019全新作品！5分钟销量6.3万册+，30分钟突破12.4万册，再创历史新高！）"><img src="http://img3x2.ddimg.cn/25/36/27878722-1_b_12.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/27878722.html#ddclick_reco_cart_foru" target="_blank">小孩（大冰2019全新作品！5分钟销量6.3万册+，30分钟突破12.4万册，再创历史新高！）</a></p>
+                                <p><span class="price">¥29.80</span></p><a href="javascript:;" data-item="27878722" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/27878722.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>4503</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/24198400.html#ddclick_reco_cart_foru" class="gpic" title="我喜欢生命本来的样子(周国平经典散文作品集)"><img src="http://img3x0.ddimg.cn/28/30/24198400-1_b_4.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/24198400.html#ddclick_reco_cart_foru" target="_blank">我喜欢生命本来的样子(周国平经典散文作品集)</a></p>
+                                <p><span class="price">¥42.30</span></p><a href="javascript:;" data-item="24198400" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/24198400.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>522742</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/25090502.html#ddclick_reco_cart_foru" class="gpic" title="平凡的世界：全三册（朱一龙推荐，八年级下册自主阅读推荐）"><img src="http://img3x2.ddimg.cn/41/25/25090502-1_b_5.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/25090502.html#ddclick_reco_cart_foru" target="_blank">平凡的世界：全三册（朱一龙推荐，八年级下册自主阅读推荐）</a></p>
+                                <p><span class="price">¥74.50</span></p><a href="javascript:;" data-item="25090502" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/25090502.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>989383</span>位用户评价</a></p>
+                            </li>
+                        </ul>
+                        <ul class="show_box line2" request_id="201907060942069684_000054877382671550" style="display: none;">
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/24144615.html#ddclick_reco_cart_foru" class="gpic" title="我不敢说，我怕被骂"><img src="http://img3x5.ddimg.cn/0/6/24144615-1_b_11.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/24144615.html#ddclick_reco_cart_foru" target="_blank">我不敢说，我怕被骂</a></p>
+                                <p><span class="price">¥34.10</span></p><a href="javascript:;" data-item="24144615" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/24144615.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>215134</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/25119332.html#ddclick_reco_cart_foru" class="gpic" title="东野圭吾：白夜行（2017版，易烊千玺、韩雪推荐，东野圭吾无冕之王）"><img src="http://img3x2.ddimg.cn/62/32/25119332-1_b_9.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/25119332.html#ddclick_reco_cart_foru" target="_blank">东野圭吾：白夜行（2017版，易烊千玺、韩雪推荐，东野圭吾无冕之王）</a></p>
+                                <p><span class="price">¥41.10</span></p><a href="javascript:;" data-item="25119332" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/25119332.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>1309916</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/25308985.html#ddclick_reco_cart_foru" class="gpic" title="丰子恺万般滋味，都是生活"><img src="http://img3x5.ddimg.cn/31/23/25308985-1_b_8.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/25308985.html#ddclick_reco_cart_foru" target="_blank">丰子恺万般滋味，都是生活</a></p>
+                                <p><span class="price">¥35.70</span></p><a href="javascript:;" data-item="25308985" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/25308985.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>149649</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/25272786.html#ddclick_reco_cart_foru" class="gpic" title="窗边的小豆豆(2018版)"><img src="http://img3x6.ddimg.cn/66/10/25272786-1_b_3.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/25272786.html#ddclick_reco_cart_foru" target="_blank">窗边的小豆豆(2018版)</a></p>
+                                <p><span class="price">¥29.60</span></p><a href="javascript:;" data-item="25272786" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/25272786.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>1019362</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/20039611.html#ddclick_reco_cart_foru" class="gpic" title="小熊和最好的爸爸（全7册）"><img src="http://img3x1.ddimg.cn/31/4/20039611-1_b_9.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/20039611.html#ddclick_reco_cart_foru" target="_blank">小熊和最好的爸爸（全7册）</a></p>
+                                <p><span class="price">¥34.30</span></p><a href="javascript:;" data-item="20039611" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/20039611.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>811070</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/25142121.html#ddclick_reco_cart_foru" class="gpic" title="墨菲定律"><img src="http://img3x1.ddimg.cn/81/29/25142121-1_b_2.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/25142121.html#ddclick_reco_cart_foru" target="_blank">墨菲定律</a></p>
+                                <p><span class="price">¥25.60</span></p><a href="javascript:;" data-item="25142121" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/25142121.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>205312</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/25209814.html#ddclick_reco_cart_foru" class="gpic" title="生活需要仪式感 （把温暖和感动带给你在乎的人）"><img src="http://img3x4.ddimg.cn/58/12/25209814-1_b_2.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/25209814.html#ddclick_reco_cart_foru" target="_blank">生活需要仪式感 （把温暖和感动带给你在乎的人）</a></p>
+                                <p><span class="price">¥32.10</span></p><a href="javascript:;" data-item="25209814" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/25209814.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>445984</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/23445575.html#ddclick_reco_cart_foru" class="gpic" title="万历十五年 一本好书 腾讯视频栏目推荐"><img src="http://img3x5.ddimg.cn/98/7/23445575-1_b_5.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/23445575.html#ddclick_reco_cart_foru" target="_blank">万历十五年 一本好书 腾讯视频栏目推荐</a></p>
+                                <p><span class="price">¥18.70</span></p><a href="javascript:;" data-item="23445575" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/23445575.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>534649</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/27871602.html#ddclick_reco_cart_foru" class="gpic" title="三体艺术插画集(赠送6张电子图。请在购买纸书的时候勾选电子书赠品获取高清图的分享链接和密码)"><img src="http://img3x2.ddimg.cn/33/20/27871602-1_b_5.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/27871602.html#ddclick_reco_cart_foru" target="_blank">三体艺术插画集(赠送6张电子图。请在购买纸书的时候勾选电子书赠品获取高清图的分享链接和密码)</a></p>
+                                <p><span class="price">¥333.00</span></p><a href="javascript:;" data-item="27871602" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/27871602.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>77</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/23546266.html#ddclick_reco_cart_foru" class="gpic" title="夏洛的网（新）"><img src="http://img3x6.ddimg.cn/7/21/23546266-1_b_6.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/23546266.html#ddclick_reco_cart_foru" target="_blank">夏洛的网（新）</a></p>
+                                <p><span class="price">¥19.50</span></p><a href="javascript:;" data-item="23546266" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/23546266.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>589793</span>位用户评价</a></p>
+                            </li>
+                        </ul>
+                        <ul class="show_box line2" request_id="201907060942069684_000054877382671550" style="display: none;">
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/27873275.html#ddclick_reco_cart_foru" class="gpic" title="香料漂流记：孜然、骆驼、旅行商队的全球化之旅（从香料发展史看全球化进程)"><img src="http://img3x5.ddimg.cn/23/28/27873275-1_b_3.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/27873275.html#ddclick_reco_cart_foru" target="_blank">香料漂流记：孜然、骆驼、旅行商队的全球化之旅（从香料发展史看全球化进程)</a></p>
+                                <p><span class="price">¥73.90</span></p><a href="javascript:;" data-item="27873275" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/27873275.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>23</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/26263139.html#ddclick_reco_cart_foru" class="gpic" title="无羁（墨香铜臭作品）（王一博、肖战 《陈情令》原著，魏无羡、蓝忘机）"><img src="http://img3x9.ddimg.cn/23/21/26263139-1_b_6.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/26263139.html#ddclick_reco_cart_foru" target="_blank">无羁（墨香铜臭作品）（王一博、肖战 《陈情令》原著，魏无羡、蓝忘机）</a></p>
+                                <p><span class="price">¥26.40</span></p><a href="javascript:;" data-item="26263139" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/26263139.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>42148</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/27863877.html#ddclick_reco_cart_foru" class="gpic" title="当当独家定制 从20字到200字 套装3册 看图写话+作文起步+日记起步 适用1-2年级 抓住要素 完善细节 加入想象 赠《画说作文60法》"><img src="http://img3x7.ddimg.cn/30/28/27863877-1_b_5.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/27863877.html#ddclick_reco_cart_foru" target="_blank">当当独家定制 从20字到200字 套装3册 看图写话+作文起步+日记起步 适用1-2年级 抓住要素 完善细节 加入想象 赠《画说作文60法》</a></p>
+                                <p><span class="price">¥54.70</span></p><a href="javascript:;" data-item="27863877" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/27863877.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>18</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/27859553.html#ddclick_reco_cart_foru" class="gpic" title="给孩子讲的中国故事（全20册）"><img src="http://img3x3.ddimg.cn/62/33/27859553-1_b_5.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/27859553.html#ddclick_reco_cart_foru" target="_blank">给孩子讲的中国故事（全20册）</a></p>
+                                <p><span class="price">¥253.50</span></p><a href="javascript:;" data-item="27859553" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/27859553.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>4275</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/25100818.html#ddclick_reco_cart_foru" class="gpic" title="红星照耀中国（青少版）人民文学出版社"><img src="http://img3x8.ddimg.cn/61/18/25100818-1_b_3.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/25100818.html#ddclick_reco_cart_foru" target="_blank">红星照耀中国（青少版）人民文学出版社</a></p>
+                                <p><span class="price">¥28.10</span></p><a href="javascript:;" data-item="25100818" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/25100818.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>267451</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/1474070458.html#ddclick_reco_cart_foru" class="gpic" title="阿迪达斯adidas童鞋儿童运动鞋婴幼童训练鞋轻便透气秋款宝宝学步鞋休闲鞋 S81082 蓝/亮黄荧光(0-4岁可选) 8K/参考脚长150mm"><img src="http://img3x8.ddimg.cn/58/4/1474070458-1_b_1.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/1474070458.html#ddclick_reco_cart_foru" target="_blank">阿迪达斯adidas童鞋儿童运动鞋婴幼童训练鞋轻便透气秋款宝宝学步鞋休闲鞋 S81082 蓝/亮黄荧光(0-4岁可选) 8K/参考脚长150mm</a></p>
+                                <p><span class="price">¥199.00</span></p><a href="javascript:;" data-item="1474070458" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/1474070458.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>30</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/27866721.html#ddclick_reco_cart_foru" class="gpic" title="事实（比尔·盖茨送给全美大学生的毕业礼物！比尔·盖茨逢人就推荐的热门大书！教你用数据思考，避免情绪化决策！颠覆思维方式的神作！）"><img src="http://img3x1.ddimg.cn/3/23/27866721-1_b_2.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/27866721.html#ddclick_reco_cart_foru" target="_blank">事实（比尔·盖茨送给全美大学生的毕业礼物！比尔·盖茨逢人就推荐的热门大书！教你用数据思考，避免情绪化决策！颠覆思维方式的神作！）</a></p>
+                                <p><span class="price">¥68.30</span></p><a href="javascript:;" data-item="27866721" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/27866721.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>1731</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/27849618.html#ddclick_reco_cart_foru" class="gpic" title="小林漫画“入选2019年全国lll卷高考作文题”（全二册当当独家限量印章版）"><img src="http://img3x8.ddimg.cn/27/14/27849618-1_b_8.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/27849618.html#ddclick_reco_cart_foru" target="_blank">小林漫画“入选2019年全国lll卷高考作文题”（全二册当当独家限量印章版）</a></p>
+                                <p><span class="price">¥52.80</span></p><a href="javascript:;" data-item="27849618" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/27849618.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>21738</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/23435948.html#ddclick_reco_cart_foru" class="gpic" title="小学生必背古诗词75+80首 近17万多读者好评，不同印次随机发货。"><img src="http://img3x8.ddimg.cn/74/0/23435948-1_b_11.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/23435948.html#ddclick_reco_cart_foru" target="_blank">小学生必背古诗词75+80首 近17万多读者好评，不同印次随机发货。</a></p>
+                                <p><span class="price">¥23.20</span></p><a href="javascript:;" data-item="23435948" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/23435948.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>171445</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/25278075.html#ddclick_reco_cart_foru" class="gpic" title="观山海  “百鬼画师”杉泽绝美诠释山海经"><img src="http://img3x5.ddimg.cn/9/8/25278075-1_b_19.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/25278075.html#ddclick_reco_cart_foru" target="_blank">观山海  “百鬼画师”杉泽绝美诠释山海经</a></p>
+                                <p><span class="price">¥92.40</span></p><a href="javascript:;" data-item="25278075" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/25278075.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>102068</span>位用户评价</a></p>
+                            </li>
+                        </ul>
+                        <ul class="show_box line2" request_id="201907060942069684_000054877382671550" style="display: none;">
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/20605371.html#ddclick_reco_cart_foru" class="gpic" title="权威定本四大名著： 红楼梦 三国演义  水浒传  西游记 当当网全国独家（腰封版本随/机派发）"><img src="http://img3x1.ddimg.cn/6/34/20605371-1_b_5.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/20605371.html#ddclick_reco_cart_foru" target="_blank">权威定本四大名著： 红楼梦 三国演义  水浒传  西游记 当当网全国独家（腰封版本随/机派发）</a></p>
+                                <p><span class="price">¥197.00</span></p><a href="javascript:;" data-item="20605371" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/20605371.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>139129</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/25062481.html#ddclick_reco_cart_foru" class="gpic" title="诺奖少年版（全30册）当当年度畅销书，日销ZUI高达50000册，系列销量突破4000000册，31万五星好评。含新课标书目"><img src="http://img3x1.ddimg.cn/37/13/25062481-1_b_2.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/25062481.html#ddclick_reco_cart_foru" target="_blank">诺奖少年版（全30册）当当年度畅销书，日销ZUI高达50000册，系列销量突破4000000册，31万五星好评。含新课标书目</a></p>
+                                <p><span class="price">¥396.00</span></p><a href="javascript:;" data-item="25062481" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/25062481.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>315860</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/27852156.html#ddclick_reco_cart_foru" class="gpic" title="斗罗大陆4终极斗罗6 唐家三少"><img src="http://img3x6.ddimg.cn/90/36/27852156-1_b_3.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/27852156.html#ddclick_reco_cart_foru" target="_blank">斗罗大陆4终极斗罗6 唐家三少</a></p>
+                                <p><span class="price">¥32.00</span></p><a href="javascript:;" data-item="27852156" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/27852156.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>139</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/27864233.html#ddclick_reco_cart_foru" class="gpic" title="你今天真好看3：一见你就好心情（《你今天真好看》系列新作暖萌来袭！超减压治愈漫画，让蠢萌的小动物们，治愈你生活中的丧！）"><img src="http://img3x3.ddimg.cn/89/14/27864233-1_b_3.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/27864233.html#ddclick_reco_cart_foru" target="_blank">你今天真好看3：一见你就好心情（《你今天真好看》系列新作暖萌来袭！超减压治愈漫画，让蠢萌的小动物们，治愈你生活中的丧！）</a></p>
+                                <p><span class="price">¥49.00</span></p><a href="javascript:;" data-item="27864233" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/27864233.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>1071</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/27887478.html#ddclick_reco_cart_foru" class="gpic" title="女司机故事集"><img src="http://img3x8.ddimg.cn/69/23/27887478-1_b_2.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/27887478.html#ddclick_reco_cart_foru" target="_blank">女司机故事集</a></p>
+                                <p><span class="price">¥59.80</span></p><a href="javascript:;" data-item="27887478" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/27887478.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>16</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/27882147.html#ddclick_reco_cart_foru" class="gpic" title="气场哪里来（冯唐、陈数、吴晓波联袂推荐！从19个女人的传奇故事，看气场的6种类型，找准自己的优势和短板。）"><img src="http://img3x7.ddimg.cn/84/20/27882147-1_b_4.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/27882147.html#ddclick_reco_cart_foru" target="_blank">气场哪里来（冯唐、陈数、吴晓波联袂推荐！从19个女人的传奇故事，看气场的6种类型，找准自己的优势和短板。）</a></p>
+                                <p><span class="price">¥39.80</span></p><a href="javascript:;" data-item="27882147" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/27882147.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>1439</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/24156030.html#ddclick_reco_cart_foru" class="gpic" title="长安十二时辰（上下册）"><img src="http://img3x0.ddimg.cn/30/25/24156030-1_b_12.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/24156030.html#ddclick_reco_cart_foru" target="_blank">长安十二时辰（上下册）</a></p>
+                                <p><span class="price">¥39.80</span></p><a href="javascript:;" data-item="24156030" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/24156030.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>83515</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/25583206.html#ddclick_reco_cart_foru" class="gpic" title="哈利·波特（套装1-7册）《语文》教材推荐阅读书目，外国儿童文学经典，新英国版封面平装版"><img src="http://img3x6.ddimg.cn/22/0/25583206-1_b_3.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/25583206.html#ddclick_reco_cart_foru" target="_blank">哈利·波特（套装1-7册）《语文》教材推荐阅读书目，外国儿童文学经典，新英国版封面平装版</a></p>
+                                <p><span class="price">¥328.50</span></p><a href="javascript:;" data-item="25583206" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/25583206.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>183173</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/25301747.html#ddclick_reco_cart_foru" class="gpic" title="总要习惯一个人（蕊希作品。写给每一个爱过哭过失去过但依然在用力成长的你！）"><img src="http://img3x7.ddimg.cn/20/0/25301747-1_b_8.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/25301747.html#ddclick_reco_cart_foru" target="_blank">总要习惯一个人（蕊希作品。写给每一个爱过哭过失去过但依然在用力成长的你！）</a></p>
+                                <p><span class="price">¥49.80</span></p><a href="javascript:;" data-item="25301747" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/25301747.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>108334</span>位用户评价</a></p>
+                            </li>
+                            <li request_id="201907060942069684_000054877382671550">
+                                <a href="javascript:;/27892021.html#ddclick_reco_cart_foru" class="gpic" title="北京女子图鉴（一直被跟风，从未被超越，两年连载留言10万+，有共鸣、有泪目、有动容、有惊叹……@反裤衩阵地/王欣 重磅作品）"><img src="http://img3x1.ddimg.cn/58/15/27892021-1_b_3.jpg" width="150" height="150"> </a>
+                                <p><a href="javascript:;/27892021.html#ddclick_reco_cart_foru" target="_blank">北京女子图鉴（一直被跟风，从未被超越，两年连载留言10万+，有共鸣、有泪目、有动容、有惊叹……@反裤衩阵地/王欣 重磅作品）</a></p>
+                                <p><span class="price">¥31.00</span></p><a href="javascript:;" data-item="27892021" class="btn_add fn-btn-add">加入购物车</a>
+                                <p class="pl"><a target="_blank" href="javascript:;/27892021.html?point=comment_point&amp;ddclick_reco_cart_foru">已有<span>561</span>位用户评价</a></p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="shopping_ads" id="fn-recent-view" style="display:none;"></div>
+        <div class="shopping_ads" id="J_alsobuy" style="display:none;"></div>
+        <div class="shopping_ads my_tui" id="hot_ad" style="display: none;"></div>
+        <div class="shopping_ads" id="J_weinituijian" style="display:none;"></div>
+        <div class="shopping_ads" id="fn-my-wish" style="display:none;"></div>
+
+    </div>
+
+    <div class="pop_del pop_ebook" style="left:460px; right:auto; top:-130px;display: none;" id="J_vnewzTipBox">
+        <a href="#" class="close"></a>
+        <h1>限时说明</h1>
+        <p>由于尾品会和新品汇的商品库存有限，我们只能为您保留<span class="red">20分钟</span>，否则尾品会及新品汇的商品将被删除，请尽快结算。</p>
+    </div>
+
+
+    <div id="mask"></div>
+    <div id="sema">
+        <div id="size_color_box" class="size_color_box" dd_name="购物车换分色分码弹窗">
+            <div class="pic_info clearfix">
+                <a href="javascript:;" class="sc_close fn-close-ss"></a>
+                <div class="show_pic">
+                    <a class="big" title="商品名称" href="##">
+                        <span class="pic"><img class="fn-img" width="350" height="350" alt="商品名称"></span>
+                    </a>
+                </div>
+                <div class="show_info">
+                    <div class="head" name="Title_pub">
+                        <h1 class="fn-data" data-set="title"></h1>
+                    </div>
+                    <div class="buy_area">
+                        <div class="clearfix" id="colorDivId">
+                            <div class="show_info_left fn-data" data-set="colorname"></div>
+                            <div class="show_info_right o_h">
+                                <ul class="color fn-colors" id="select_color_id">
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="clearfix m_t6" id="sizedivid">
+                            <div class="show_info_left fn-data" data-set="sizename"></div>
+                            <div class="show_info_right o_h">购买此商品,可享促销
+                                <ul class="size fn-sizes" id="select_size_id">
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="clearfix m_t8">
+                            <div class="show_info_left">&nbsp;</div>
+                            <div class="show_info_right c_red fn-errormsg"></div>
+                        </div>
+                        <div class="clearfix m_t8">
+                            <div class="show_info_left">&nbsp;</div>
+                            <div class="show_info_right clearfix">
+                                <a id="changeSkuDivId" href="javascript:;" class="yes_id_do fn-semasubmit" dd_name="购物车换分色分码确认">确 认</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixedbar">
+        <div class="window_suspend"><a target="_blank" href="javascript:;">问卷调查</a></div>
+    </div>
+
+    <link href="//static.dangdang.com/css/header2012/footer_140522.css?20180908" rel="stylesheet" type="text/css">
+    <div id="footer">
+        <div class="footer">
+            <div class="footer_nav_box">
+                <div class="footer_copyright"><span>Copyright (C) 当当网 2004-2014, All Rights Reserved</span>
+                    <a href="javascript:;" target="_blank" class="footer_img" rel="nofollow"><img src="//img60.ddimg.cn/upload_img/00459/index/validate.gif"></a><span><a href="http://www.miibeian.gov.cn/" target="_blank" rel="nofollow">京ICP证041189号</a></span><span>出版物经营许可证&nbsp;新出发京批字第直0673号</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="foot_tip_ad">广告</div>
+    <style>
+        .foot_tip_ad {
+            width: 40px;
+            height: 40px;
+            font: 12px/40px "simsun";
+            text-align: center;
+            color: #fff;
+            background-color: #474747;
+            position: fixed;
+            right: 0;
+            bottom: 10px;
+            _position: absolute;
+            _bottom: auto;
+            _top: expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop, 10)||0)-(parseInt(this.currentStyle.marginBottom, 10)||0)));
+        }
+    </style>
+
+
+
+</body>
+
+</html>

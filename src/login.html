@@ -1,0 +1,426 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+    <title>登录 - 当当网</title>
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <link href="http://10.31.158.62/dangdang/src/css/login/login.css" rel="stylesheet" type="text/css">
+    <link href="http://10.31.158.62/dangdang/src/css/login/pop%20cheat.css" rel="stylesheet" type="text/css">
+</head>
+
+<body ddt-page="login_page">
+    <div class="head">
+        <a href="http://10.31.158.62/dangdang/src/index.html">
+            <img src="./img/DDlogoNEW.gif">
+        </a>
+        <div class="improve">
+            <span class="icon"></span><a class="info" href="javascript:;" target="_blank">“登录页面“改进建议</a>
+        </div>
+    </div>
+    <div class="login_bg">
+        <img src="./img/201907051557351311.jpg" style="display: none;">
+        <div class="set_area">
+            <div class="wrap clearfix">
+                <div id="J_cheatProofTop" class="new_tip" style="display: block; width: 338px; height: 24px; right: -1px; top: -27px;">
+                    <div>
+                        请勿设置与邮箱及其他网站相同的登录及支付密码，<a href="javascript:;?p=22276">谨防诈骗</a>！
+                    </div>
+                </div>
+                <!--<div class="pic">
+                        <a id="aBgPicUrlReferTo" target="_blank" dd_name="登录广告图" style="display:block;outline:none;blr:expression(this.onFocus=this.blur());"
+                           href="http://a.dangdang.com/api/data/cpx/link/38930001/1">
+                            <img id="J_loginTopAdIE8" style="display: none;" onerror="this.src='/images/ad_default.jpg';document.getElementById('aBgPicUrlReferTo').setAttribute('href','http://cosmetic.dangdang.com/20151130_45pn');"></img>
+
+                            <img id="J_loginTopAd" src="http://a.dangdang.com/api/data/cpx/img/38930001/1"
+                                 onerror="this.onerror=null;this.src='http://img60.ddimg.cn/upload_img/00418/lisiyi/480-384-11-30.jpg';document.getElementById('aBgPicUrlReferTo').setAttribute('href','http://cosmetic.dangdang.com/20151130_45pn');"  style="background: url(/images/loading1.gif) no-repeat 50% 50%;"/>
+                        </a>
+                    </div>-->
+                <div id="J_loginDiv">
+                    <link href="https://login.dangdang.com/style/login_core.css?20170215" rel="stylesheet" type="text/css">
+                    <link href="https://login.dangdang.com/style/login_core_mobile_code.css?20160804" rel="stylesheet" type="text/css">
+                    <link href="https://login.dangdang.com/style/captcha.css?20160727" rel="stylesheet" type="text/css">
+                    <div class="switch_btn">
+                        <div class="hd">
+                            <a class="switch start" href="javascript:void(0);"></a>
+                            <a class="switch quick" href="javascript:void(0);" style="display:none"></a>
+                        </div>
+                        <div class="info_remind">
+                            <div class="info"> <span class="safe_icon"></span> <span id="J_startTip">扫码登录更安全</span>
+                                <span id="J_quickTip" style="display:none">密码登录在这里</span>
+                                <span class="arrow_icon"></span></div>
+                        </div>
+                    </div>
+                    <div id="J_loginCoreWrap" class="infro" ddt-area="login_password_div">
+                        <p style="" class="password_login">密码登录</p>
+
+                        <div class="username" id="username_div"> <span></span> <input style="display:none"> <input class="user" id="txtUsername" name="txtUsername" type="text" autocomplete="off" maxlength="40" value="" errordata="0" tabindex="1">
+                            <a class="text_del" id="clearUsername" href="javascript:void(0);" style="display:none;"></a> <a class="replacetype01 " id="selectusertype" href="javascript:void(0);" style="display:none;">更换类型</a>
+                            <span class="placeholder" style="background: none; position: absolute; z-index: 20; color: rgb(176, 176, 176); width: 270px; height: 34px; font-size: 13.3333px; padding-left: 0px; font-family: &quot;Microsoft Yahei&quot;; top: 0px; left: 40px; line-height: 34px;">邮箱/昵称/手机号码</span></div>
+                        <p id="user_mindstyle" class="tips"> <span id="liDivErrorMessage"></span> <span class="error_choose" id="selecttype">            	<b>请选择用户类型</b><!-- 璇烽€夋嫨鐢ㄦ埛绫诲瀷 -->                <input id="selusertypemail" type="radio" value="" name="selusertype"><label class="error_nickname">昵称</label><!-- 鏄电О -->                <input id="selusertypemobile" type="radio" value="" name="selusertype"><label class="error_mobilename">手机号码</label><!-- 鎵嬫満鍙风爜 -->            </span>                            </p>
+
+                        <div class="password" id="password_div"> <span></span> <input class="pass" id="txtPassword" name="txtPassword" type="password" maxlength="20" autocomplete="off" errordata="0" tabindex="2"> <span class="placeholder" style="background: none; position: absolute; z-index: 20; color: rgb(176, 176, 176); width: 270px; height: 34px; font-size: 13.3333px; padding-left: 0px; font-family: &quot;Microsoft Yahei&quot;; top: 0px; left: 40px; line-height: 34px;">密码</span></div>
+                        <p class="tips" id="pass_mindstyle"> <span id="login_password_error" style="display: none"></span> <span class="big_tip" id="passwordCapslock">键盘大写锁定已打开，请注意大小写!</span>
+
+                        </p>
+                        <div id="J_rotateVcodeWrap" style="" class="Rotate">
+                            <div class="Rotate-operate"><label class="Rotate-prompt">请点击下方图片，旋转至正确方向</label><label class="error is-visible">请点击下方图片，旋转至正确方向</label><a class="Rotate-refresh">换一组</a></div>
+                            <div class="Rotate-background" style="background-image: url(&quot;https://rotate.dangdang.com/rotate.php?t=1562380185000&quot;); background-position: 0px 0px;"><input type="hidden" value="0"></div>
+                            <div class="Rotate-background" style="background-image: url(&quot;https://rotate.dangdang.com/rotate.php?t=1562380185000&quot;); background-position: -76px 0px;"><input type="hidden" value="0"></div>
+                            <div class="Rotate-background" style="background-image: url(&quot;https://rotate.dangdang.com/rotate.php?t=1562380185000&quot;); background-position: -152px 0px;"><input type="hidden" value="0"></div>
+                            <div class="Rotate-background" style="background-image: url(&quot;https://rotate.dangdang.com/rotate.php?t=1562380185000&quot;); background-position: -228px 0px;"><input type="hidden" value="0"></div>
+                        </div>
+                        <div id="J_captchVcodeWrap" style="display:none;"></div>
+                        <div id="J_vcodeWrap" style="display:none;">
+                            <div class="code_wrap" id="inputcode" style="display:block;">
+                                <div class="code" id="vcode_model"> <span></span> <input class="codes" id="txtVerifyCode" name="txtVerifyCode" type="text" maxlength="4" autocomplete="off" tabindex="3" errordata="0" style=""> <label class="pwdReplace" id="codeReplacer" style="display: none;"
+                                        for="txtVerifyCode">验证码</label>
+                                    <span class="placeholder" style="background: none; position: absolute; z-index: 20; color: rgb(176, 176, 176); width: 0px; height: 0px; font-size: 13.3333px; padding-left: 0px; font-family: &quot;Microsoft Yahei&quot;; display: none; top: 0px; left: 40px; line-height: 0px;">验证码</span></div>
+                                <a class="code_pic" id="vcodeImgWrap" href="javascript:void(0);"> <img id="imgVcode" tabindex="4"> </a> <a id="vcodeImgBtn" href="javascript:void(0);" tabindex="5">换张图</a>
+
+                            </div>
+                            <p class="tips" id="vcode_mindstyle" style="display:block;"> <span id="login_vcode_error"></span> </p>
+                        </div>
+
+                        <p class="auto_login"> <a href="javascript:;" tabindex="8" target="_blank">忘记密码？</a>
+                            <input class="auto_box" id="autologin" name="autologin" type="checkbox" tabindex="7" checked=""> <span style="display: none;">七天内自动登录</span>
+                            <span class="safe" style="display: inline-block;">请勿在公用电脑上勾选此选项</span>
+                            <input type="hidden" id="ispersist" name="ispersist" value="on"> </p>
+
+                        <p class="btn"><a id="submitLoginBtn" href="javascript:void(0);" tabindex="6">登&nbsp;录</a></p>
+
+                        <p class="register">
+                            <a style="" id="J_loginToRegister" class="register_btn" href="http://10.31.158.62/dangdang/src/registor.html" tabindex="9">立即注册</a>
+                            <span>使用合作网站登录</span>
+
+                        </p>
+                        <div class="partner clearfix" id="share_login">
+                            <dl> <dt><a class="qq" id="qqShare" href="javascript:void(0)" title="ＱＱ" tabindex="10">ＱＱ</a></dt>
+                                <dt><a class="wx" id="wxShare" href="javascript:void(0)" title="微信" tabindex="11">微信</a></dt>
+                                <dt><a class="wb" id="wbShare" href="javascript:void(0)" title="新浪微博" tabindex="12">新浪微博</a></dt>
+                                <dt><a class="alpay" id="alipayShare" href="javascript:;" title="支付宝" tabindex="13">支付宝</a></dt>
+
+                                <dd id="showShareMore"> <a class="more" href="javascript:void(0)">更多<em></em></a>
+
+                                    <ul id="shareMore" style="display:none">
+                                        <li class="arrow"></li>
+                                        <li><a id="doubanShare" href="javascript:void(0)">豆瓣</a></li>
+
+                                        <li><a id="baiduShare" href="javascript:void(0)">百度</a></li>
+
+                                        <li><a id="fetionShare" href="javascript:void(0)">飞信</a></li>
+
+                                        <li class="mr0"><a id="renrenShare" href="javascript:void(0)">人人网</a></li>
+
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+
+                    <div id="J_qrcodeWrap" class="infro quick_login" style="display: none;" ddt-area="login_qrcode_div">
+                        <p style="" class="password_login">扫码登录</p>
+
+                        <div class="scan_process" style="display: block;">
+                            <div class="two_code">
+                                <div class="pic_code" style=""><img id="J_qrcodeImg" src="" title="" alt="网络故障，请稍候重试"></div>
+
+                                <div class="tel_pic" style="opacity:1;filter: alpha(opacity=100);display:none"></div>
+
+                                <div class="scan_false" style="display:none">
+                                    <div class="panel"></div>
+                                    <div class="false_remind">
+                                        <p>二维码已失效</p>
+                                        <a href="javascript:void(0);" class="refresh">请点击刷新</a>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tel_remind">
+                                <div class="information">打开<a href="http://t.dangdang.com/20130220_ydmr" target="_blank"><span>手机当当</span></a>扫一扫登录</div>
+
+                            </div>
+                        </div>
+
+                        <div class="scan_success" style="display:none;">
+                            <div class="img"><img src="https://login.dangdang.com/images/tel_modle.png"></div>
+                            <p class="qrsuccess">扫描成功!</p>
+
+                            <p class="confirm">请在手机上确认登录</p>
+                            <a href="javascript:void(0);" class="return_btn">返回二维码登录</a>
+
+                        </div>
+                        <p class="register" style="display:none"><a href="https://login.dangdang.com/register.php?returnurl=http://www.dangdang.com/" class="register_btn">立即注册</a><span class="now_regist"></span></p>
+
+                    </div>
+
+                    <div id="J_yidiLoginWrap" class="login_core infro" style="display: none;" ddt-area="login_nolocal_mobile_div">
+                        <ul class="list">
+                            <li>
+                                <p class="tip">为了更好的保证您账户的安全，请进行短信验证</p>
+
+                            </li>
+                            <li>
+                                <div class="name">手机号：</div>
+                                <div id="J_nolocalMobile"></div>
+
+                            </li>
+                            <li>
+                                <div class="name">短信验证码：</div>
+                                <input id="J_ePhoneCode" name="" type="text" class="small" maxlength="6"> <a id="J_getEPhoneCode" class="btn_check" href="javascript:;" onclick="return false;">获取验证码</a>
+                                <a id="J_unGetEPhoneCode" class="btn_uncheck unable" href="javascript:;" style="display:none;">获取验证码</a>
+
+                                <div id="J_ePhoneCodeTipInfo" class="ltip"></div>
+                            </li>
+                            <li>
+                                <a class="btn" id="J_ePhoneCodeSubmit" href="javascript:void(0);" tabindex="6">登&nbsp;录</a>
+
+                                <p> <span class="contact">						<a class="contact_service" href="http://help.dangdang.com/details/page206" target="_blank">联系客服</a><!-- 鑱旂郴瀹㈡湇  -->						<a class="change_verify" id="J_change2OrderVerify" href="javascript:;" onclick="return false;">换一种验证方式</a>					</span>                                    </p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="J_yidiLoginOrderWrap" class="login_core infro" style="display: none;" ddt-area="login_nolocal_order_div">
+                        <p class="ordertip">为了更好的保证您的账户安全，请完成安全验证</p>
+
+                        <p class="ordertip">请点击近期购买过的商品（单选）</p>
+
+                        <p class="tip_infomation">2次验证错误后,系统将自动锁定账户48小时,请谨慎操作。</p>
+
+                        <div style="width:312px;height:156px;position:relative">
+                            <div class="orderimg"><img src="https://login.dangdang.com/images/no_order_img.png"><input type="hidden" value=""></div>
+                            <div class="orderimg"><img src="https://login.dangdang.com/images/no_order_img.png"><input type="hidden" value=""></div>
+                            <div class="orderimg"><img src="https://login.dangdang.com/images/no_order_img.png"><input type="hidden" value=""></div>
+                            <div class="orderimg"><img src="https://login.dangdang.com/images/no_order_img.png"><input type="hidden" value=""></div>
+                            <div class="orderimg"><img src="https://login.dangdang.com/images/no_order_img.png"><input type="hidden" value=""></div>
+                            <div class="orderimg"><img src="https://login.dangdang.com/images/no_order_img.png"><input type="hidden" value=""></div>
+                            <div class="orderimg"><img src="https://login.dangdang.com/images/no_order_img.png"><input type="hidden" value=""></div>
+                            <div class="orderimg"><img src="https://login.dangdang.com/images/no_order_img.png"><input type="hidden" value=""></div>
+                            <div class="orderimg-button" style="display: none;"></div>
+                            <div class="orderimg-mask" style="display: none;"></div>
+                        </div>
+                        <div class="orderspan"> <span id="J_yidiLoginOrder_error" style="display: none"></span>
+
+                        </div>
+                        <a class="orderbtn" id="J_yidiLoginOrderSubmit" href="javascript:void(0);">登&nbsp;录</a>
+
+                        <p style="margin-top: 15px;"> <span class="contact">				<a class="contact_service" href="http://help.dangdang.com/details/page206" target="_blank">联系客服</a><!-- 鑱旂郴瀹㈡湇  -->				<a class="change_verify" id="J_change2MobileVerify" href="javascript:;" onclick="return false;">换一种验证方式</a>			</span>                            </p> <input type="hidden" id="order_id" value=""> </div>
+
+                    <div id="J_yidiBindMobileWrap" class="login_core infro" style="display: none;">
+                        <ul class="list list-bind">
+                            <li>
+                                <p class="tip-bind">您的账户安全级别较低，建议您绑定手机，提升安全的同时享受当当丰富的手机服务</p>
+
+                            </li>
+                            <li>
+                                <div class="name-bind">手机号：</div> <input id="J_txtMobile" name="" type="text" class="long-bind" maxlength="11">
+                                <span id="J_txtMobileTipImg" class="icon"></span>
+                                <div id="J_txtMobileTipInfo" class="ltip-bind"></div>
+                            </li>
+                            <li>
+                                <div class="name-bind">验证码：</div>
+                                <input id="J_smsVCode" name="" type="text" class="small-bind" maxlength="6"> <span id="J_smsVCodeTipImg" class="icon code_w"></span> <a id="J_getSmsVCode" class="btn-check-bind" href="javascript:;" onclick="return false;">获取验证码</a>
+                                <a id="J_unGetSmsVCode" class="btn-uncheck-bind unable" href="javascript:;" style="display:none;">获取验证码</a>
+
+                                <div id="J_smsVCodeTipInfo" class="ltip-bind"></div>
+                            </li>
+                            <li>
+                                <a class="btn-bind" id="J_smsVCodeSubmit" href="javascript:void(0);">确&nbsp;定</a>
+
+                                <p class="later"><a id="J_laterBind" href="javascript:void(0);">稍后绑定&gt;</a></p>
+
+                            </li>
+                        </ul>
+                    </div> <iframe src="https://rcc.ddimg.cn/fraud.html?token=20190706101327515952255459857148993" frameborder="0" width="0" height="0" scrolling="yes" marginheight="0" marginwidth="0"></iframe>
+                    <div class="login_btn" id="submit_signin_div">
+                        <input type="hidden" id="login_type" name="login_type" value="0"> <input type="hidden" id="txtCaptchaCode" name="txtCaptchaCode" value="0"> <input type="hidden" id="txtRotateCode" name="txtRotateCode" value="0"> </div>
+                </div>
+            </div>
+            <a class="click_area" href="http://a.dangdang.com/api/data/cpx/link/38930001/1" style=""></a>
+        </div>
+    </div>
+    <div style="display:none" class="hidden">
+        <input type="hidden" id="returnurl" value="http://shopping.dangdang.com/shoppingcart/shopping_cart.aspx?product_ids=0&amp;referer=http://book.dangdang.com/?_utm_brand_id=11106&amp;_ddclickunion=460-5-biaoti|ad_type=0|sys_id=1&amp;prev_referer=https://sp0.baidu.com/9q9JcDHa2gU2pMbgoY3K/adrc.php?t=06KL00c00fZ-jkY0VeVb0KGwAsKxOKqI000005L0n-C00000x20wmC.THvd_Uyk0A3qmh7GuZR0T1d9uHT3rjK-PH0snyf3m1PW0ZRqP1TzrjwjP1czrHu7n1T4f1D3wH6dPbn1wjD4wbcLPYm0mHdL5iuVmv-b5HnzPWDdPW6vPjmhTZFEuA-b5HDv0ARqpZwYTjCEQLN8pyq8Qhw9UhIbmy4MQhPEUiq9uAkGUhVxIZF9UMPhugc8TA9s5vuzUvdLuycqPjmsQHRVmh-9ULwGFhF9mvVdThsqpZwYTjCEQvFEUv_8uA78uvw9UhT8mvqVQzR1u-qdIAdxmMF9UhwxpyfqnHDknjm0mLFW5HfYnW6z&amp;tpl=tpl_11534_19968_16032&amp;l=1513275645&amp;attach=location%3D%26linkName%3D%25E6%25A0%2587%25E5%2587%2586%25E5%25A4%25B4%25E9%2583%25A8-%25E6%25A0%2587%25E9%25A2%2598-%25E4%25B8%25BB%25E6%25A0%2587%25E9%25A2%2598%26linkText%3D%25E5%25BD%2593%25E5%25BD%2593%25E5%25AE%2598%25E7%25BD%2591-%25E6%25AD%25A3%25E5%2593%2581%25E4%25BD%258E%25E4%25BB%25B7%25E5%2593%2581%25E8%25B4%25A8%25E4%25BF%259D%25E8%25AF%2581!%26xp%3Did(%2522m3261568646_canvas%2522)%252FDIV%255B1%255D%252FDIV%255B1%255D%252FDIV%255B1%255D%252FDIV%255B1%255D%252FDIV%255B1%255D%252FH2%255B1%255D%252FA%255B1%255D%26linkType%3D%26checksum%3D126&amp;ie=utf-8&amp;f=8&amp;tn=baidu&amp;wd=%E5%BD%93%E5%BD%93&amp;oq=%25E8%258C%2583%25E5%2586%25B0%25E5%2586%25B0&amp;rqlang=cn&amp;inputT=1592">
+        <input type="hidden" id="J_cookie_email" value="">
+    </div>
+
+    <!--页尾 开始 -->
+
+    <style type="text/css">
+        .footer_nav_box {
+            border-top: 1px solid #ebebeb;
+            width: 100%;
+            _width: expression(this.scrollWidth < 960 ? "960px": "auto");
+            min-width: 960px;
+            padding: 17px 0 50px;
+        }
+        
+        .footer_nav_box a,
+        .footer_nav_box {
+            color: #8c8c8c;
+            font-size: 12px;
+            text-decoration: none;
+        }
+        
+        .footer_nav_box a:hover {
+            color: #f48570;
+            text-decoration: underline;
+        }
+        
+        .footer_nav_box .footer_nav {
+            text-align: center;
+            line-height: 20px;
+            padding-bottom: 17px;
+            padding-top: 25px;
+        }
+        
+        .footer_nav_box .footer_nav span.sep {
+            margin: 0 17px 0 19px;
+        }
+        
+        .footer_nav_box .footer_copyright {
+            line-height: 20px;
+            text-align: center;
+            width: 960px;
+            margin: 0 auto;
+        }
+        
+        .footer_nav_box .footer_copyright span.sep {
+            margin: 0 17px 0 19px;
+        }
+        
+        .footer_nav_box .footer_icon {
+            padding: 10px 0 0 340px;
+            width: 640px;
+            margin: 0 auto;
+            height: 77px;
+        }
+        
+        .footer_nav_box .validator,
+        .footer_nav_box .knet {
+            float: left;
+            display: inline;
+            padding: 15px 5px 15px;
+            width: 135px;
+            height: 47px;
+        }
+        
+        .footer_copyright {
+            padding: 10px 0 0 0;
+            margin: 0 auto;
+            float: none;
+            width: auto;
+            text-align: center;
+            color: #8c8c8c;
+        }
+        
+        .footer_copyright span,
+        .public_footer .footer_copyright a.footer_img {
+            display: inline-block;
+            float: none;
+        }
+        
+        .footer_copyright a {
+            padding: 0 4px;
+            color: #8c8c8c;
+            font-size: 12px;
+            text-decoration: none;
+        }
+        
+        .footer_copyright a:hover {
+            color: #f48570;
+            text-decoration: underline;
+        }
+        
+        .footer_nav_box .footer_nav .footer_hot_search {
+            display: inline-block;
+            *display: inline;
+            width: 50px;
+            position: relative
+        }
+        
+        .footer_nav_box .footer_nav .pos_a_box {
+            position: absolute;
+            left: -251px;
+            top: 22px;
+            background-color: #f48570;
+            width: 300px;
+            border-radius: 8px;
+            text-align: center;
+            height: 14px;
+            line-height: 14px
+        }
+        
+        .footer_nav_box .footer_nav .pos_a_box a,
+        .footer_nav_box .footer_nav .pos_a_box a:hover,
+        .footer_nav_box .footer_nav .pos_a_box span {
+            padding: 0 2px;
+            color: #fff;
+            text-decoration: none
+        }
+        
+        .footer_nav_box .footer_nav .pos_a_box i {
+            display: block;
+            width: 0;
+            height: 0;
+            line-height: 0;
+            font-size: 0;
+            border-width: 0 4px 4px;
+            border-style: solid;
+            border-color: #fff #fff #f48570 #fff;
+            position: absolute;
+            right: 20px;
+            top: -4px
+        }
+    </style>
+
+
+    <div class="footer_nav_box">
+        <div class="footer_nav"><a href="javascript:;" target="_blank" rel="nofollow">公司简介</a><span class="sep">|</span><a href="javascript:;" target="_blank">诚聘英才</a><span class="sep">|</span><a href="javascript:;" target="_blank">手机当当</a>
+            <span class="sep">|</span><a href="javascript:;" target="_blank">网站联盟</a><span class="sep">|</span><a href="javascript:;" target="_blank">当当招商</a><span class="sep">|</span>
+            <a href="javascript:;" target="_blank" rel="nofollow">机构销售</a><span class="sep">|</span><a href="javascript:;" target="_blank">官方Blog</a>
+
+        </div>
+        <div class="footer_copyright"><span>Copyright (C) 当当网 2004-2017, All Rights Reserved</span></div>
+        <div class="footer_copyright"><span><a href="javascript:;" target="_blank" rel="nofollow">京ICP证041189号</a></span><span class="sep">|</span><span>出版物经营许可证 新出发京批字第直0673号</span><span class="sep">|</span><span>食品流通许可证：SP1101011010021855(1-1)</span><br><span>互联网药品信息服务资格证编号：(京)-非经营性-2012-0016</span>
+            <span class="sep">|</span><span>京公网安备110101000001号</span></div>
+        <!-- 有三个icon的时候加footer_icon2 -->
+        <div class="footer_icon footer_icon2" style="padding-left: 55px;">
+            <div class="validator">
+                <a href="javascript:;" target="_blank" class="footer_img"><img src="./img/validate.gif"></a>
+            </div>
+            <div class="validator">
+                <a href="javascript:;" target="_blank" class="footer_img"><img src="./img/7d593c48-48f6-4fc9-85e0-7d6e10dfc2a2.hpvgUvc9"></a>
+            </div>
+            <div class="validator">
+                <a id="_pingansec_bottomimagesmall_brand" href="javascript:;" target="_blank"><img src="./img/brand_128_47.png"></a>
+            </div>
+
+        </div>
+        <div class="clear"></div>
+    </div>
+
+
+
+
+    <!--页尾 end -->
+    <!-- 防诈骗弹窗 开始 -->
+    <div class="masks" id="J_loginMask" style="display: none;">
+        <iframe class="masks_bg"></iframe>
+        <div class="pop_cheat">
+            <h3>安全提醒</h3>
+            <div class="pop_cheat_info clearfix">
+                <div>
+                    <span class="right">当当平台及销售商<b>不会以任何理由，要求您点击任何网址链接进行退款或支付操作。</b>当当客服电话400-106-6666，0527-80878888。</span>
+                </div>
+            </div>
+            <div class="btn"><a id="J_loginMaskClose" href="javascript:void(0);">知道了</a></div>
+        </div>
+    </div>
+    <!-- 防诈骗弹窗 结束 -->
+
+    <iframe src="https://databack.dangdang.com/proxy.html?201976" width="1px" height="1px" style="border: none; display: none;"></iframe>
+
+</body>
+
+</html>
