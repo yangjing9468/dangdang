@@ -67,12 +67,7 @@
                     return false;
                 }      
 
-              });
-
-            //    if($scrollTop<900 || $scrollTop>4300){
-            //         $('.toge').removeClass('active');
-            //   }
-              
+              });             
         });
       
         // console.log($('.storey_two').offset().top)
@@ -84,7 +79,7 @@
         $('.toge').on('click',function(){
                 $(this).addClass('active').siblings().removeClass('active');
                 let $lcenttop=$lc.eq($(this).index()-2).offset().top;
-                console.log($lcenttop);
+                // console.log($lcenttop);
 
                 $('html,body').animate({
                     scrollTop:$lcenttop
@@ -101,24 +96,42 @@
 
 !function($){
 	//左边侧边栏
-	$('.level_one').each(function(e) {
-		// var submenu=$(this).find('.submenu'); 
-		// console.log(submenu);
+	$('.level_one').each(function(){
 		
 		$(this).hover(function(){
-			$('.submenu').css('display','block');
-		},function(){
-			$('.submenu').css('display','none');
-		})
-		console.log($(this));
-		
+			var $submenu=$(this).find('.submenu');
+			var thisTop=-1;
+			var	thisBodyT=$('.flq_body').offset().top,
+				thisOffsetT=$(this).offset().top,//鼠标经过该level_one自身距离顶部的top值
+				thisH=$(this).outerHeight(),//鼠标经过该level_one自身的高
+				thisSubmenuT=$submenu.offset().top,//鼠标经过该level_one显示出来的submenu距离顶部的top值				
+				thisSubmenuH=$submenu.outerHeight(),
+				winScrollT=$(window).scrollTop();////window的scrollTop的高
 
+			$submenu.hide();
+			$(this).addClass('on');
+			$submenu.css('display','block');
+
+			if(thisOffsetT>winScrollT){
+				if(winScrollT - thisBodyT<thisOffsetT+thisH-thisSubmenuH-thisBodyT-2){
+					thisTop=thisOffsetT+thisH-thisSubmenuH-thisBodyT-2;
+				}
+			
+			}
 	
-	// 	$('.submenu').css('display','block');
-	// }function(){
-	// 	$('.submenu').css('display','none');
-	// })
-	
+			if(thisTop<-1){
+				thisTop=-1
+			}
+			$submenu.css({
+				'top':thisTop+"px"
+			})
+
+		},function(){
+			var $submenu=$(this).find('.submenu');
+			$(this).removeClass('on');
+			$submenu.css('display','none');
+		})
+	})
 }(jQuery);
 
 !function($){
