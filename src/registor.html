@@ -9,7 +9,7 @@
 
 <body ddt-page="register_page">
     <link href="http://10.31.158.62/dangdang/dd/src/css/registor/unite%20header.css" rel="stylesheet" type="text/css">
-    <!-- <script src="/doc.dangdang.com/pagetop_20121010.js?2" type="text/javascript"></script> -->
+
     <div class="ddnewhead_wrap">
         <div class="ddnewhead_content ddnewhead_content2">
             <div class="ddnewhead_operate" id="__ddnav_menu">
@@ -56,9 +56,7 @@
         <div class="ddnewcarthead_bottom"></div>
     </div>
     <form action="http://search.dangdang.com/search.aspx" id="bootpagetopSearch" name="bootpagetopSearch" method="GET"></form>
-    <!-- <script type="text/javascript">
-        initHeaderOperate();
-    </script> -->
+
     <form id="register_form" method="post" action="register.php" onsubmit="return false;">
         <input type="password" style="display: none;">
         <div id="bd">
@@ -86,7 +84,7 @@
                                     <td class="t">手机号码</td>
                                     <td class="z_index2">
                                         <input name="txt_username" id="txt_username" autocomplete="off" maxlength="40" tabindex="1" value="" placeholder="请输入您的手机号码" type="text" class="text"><span id="spn_username_ok" class="icon_yes" style="display: none;"></span>
-                                        <span id="J_tipUsername" class="cue warn">手机号可用于登录、找回密码、接收订单通知等服务</span>
+                                        <span id="J_tipUsername" class="cue warn"></span>
                                         <ul class="email_select" id="select_emaildomain" style="display: none;">
                                             <li onmouseout="this.className=&quot;&quot;" onmouseover="this.className=&quot;hover_domain&quot;" title="" domin=""></li>
                                             <li onmouseout="this.className=&quot;&quot;" onmouseover="this.className=&quot;hover_domain&quot;" title="" domin="@qq.com"></li>
@@ -144,7 +142,7 @@
                                     <td class="j-vcode">
                                         <input class="text pin" type="text" id="txt_vcode" name="txt_vcode" autocomplete="off" placeholder="请输入验证码" maxlength="4" tabindex="5">
                                         <a class="code_pic" id="vcodeImgWrap" name="change_code_img" href="javascript:void(0);">
-                                            <img id="imgVcode" title="点击更换验证码" alt="点击更换验证码" width="84" height="37" src="p/tmp_proxy.php?t=1562382747013">
+                                            <img id="imgVcode" title="点击更换验证码" alt="点击更换验证码" width="84" height="37" src="https://login.dangdang.com/p/tmp_proxy.php?t=1562659505965">
                                         </a>
                                         <a id="vcodeImgBtn" name="change_code_link" class="code_picww" href="javascript:void(0);">换张图</a>
                                         <span id="spn_vcode_ok" class="icon_yes pin_i" style="display: none;"></span>
@@ -325,20 +323,7 @@
         <div class="footer_nav"><a href="javascript:;" target="_blank" rel="nofollow">公司简介</a><span class="sep">|</span><a href="javascript:;" target="_blank">诚聘英才</a><span class="sep">|</span><a href="javascript:；" target="_blank">手机当当</a>
             <span class="sep">|</span><a href="javascript:;" target="_blank">网站联盟</a><span class="sep">|</span><a href="javascript:;" target="_blank">当当招商</a><span class="sep">|</span>
             <a href="javascript:;" target="_blank" rel="nofollow">机构销售</a><span class="sep">|</span><a href="javascript:;" target="_blank">官方Blog</a>
-            <script>
-                var setTo = null;
 
-                function showghotsearch() {
-                    clearTimeout(setTo);
-                    document.getElementById("hot_search_content").style.display = "block";
-                }
-
-                function hidehotsearch() {
-                    setTo = setTimeout(function() {
-                        document.getElementById("hot_search_content").style.display = "none";
-                    }, 100)
-                }
-            </script>
         </div>
         <div class="footer_copyright"><span>Copyright (C) 当当网 2004-2017, All Rights Reserved</span></div>
         <div class="footer_copyright"><span><a href="http://www.miibeian.gov.cn/" target="_blank" rel="nofollow">京ICP证041189号</a></span><span class="sep">|</span><span>出版物经营许可证 新出发京批字第直0673号</span><span class="sep">|</span><span>食品流通许可证：SP1101011010021855(1-1)</span><br><span>互联网药品信息服务资格证编号：(京)-非经营性-2012-0016</span>
@@ -359,37 +344,11 @@
         <div class="clear"></div>
     </div>
 
+    <script type="text/javascript" src="http://10.31.158.62/dangdang/dd/src/script/js/jquery.js"></script>
+    <script type="text/javascript" src="http://10.31.158.62/dangdang/dd/src/script/js/registor.js"></script>
 
 
-    <!-- <script type="text/javascript" src="https://login.dangdang.com/script/check_browse.js"></script>
-    <script type="text/javascript">
-        login_session.browsePageOperate();
-    </script>
-    <script type="text/javascript" src="https://click.dangdang.com/js_tracker.js"></script>
-    页尾
-    <script type="text/javascript" src="script/jquery-1.8.0.min.js?20150730"></script>
-    <script type="text/javascript" src="script/register_150706.js?20150730"></script>
-    <script type="text/javascript">
-        set_robot();
-        window.onresize = function() {
-            set_robot();
-        }
-
-        function set_robot() {
-            var width = jQuery(window).width();
-            var height = jQuery(window).height();
-            if (width < 1030 || height < 150) {
-                jQuery('.help_icon_trigger').hide();
-            } else {
-                left = (width - 960) / 2 + 962;
-                jQuery(".help_icon_trigger").show().css({
-                    "left": left
-                });
-            }
-        }
-    </script>
-    <script type="text/javascript" src="https://databack.dangdang.com/collect.js?20170616"></script>
-    <script type="text/javascript" src="https://databack.dangdang.com/store.js?20170616"></script><iframe src="https://databack.dangdang.com/proxy.html?201976" width="1px" height="1px" style="border: none; display: none;"></iframe> -->
+    <!-- <iframe src="https://databack.dangdang.com/proxy.html?201976" width="1px" height="1px" style="border: none; display: none;"></iframe> -->
 
 </body>
 

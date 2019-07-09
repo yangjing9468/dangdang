@@ -233,6 +233,7 @@ body .vspacer {
     width: 1000px;
     position: relative;
     left: 0;
+    top:0;
 }
 
 .book_reco_area .book_reco_pro .list_aa li {
