@@ -72,14 +72,14 @@
                         <a title="联系客服" id="feedback" name="feedback" target="_blank" href="javascript:;">
                         </a>
                     </div>
-                    <div class="body">
+                    <fieldset class="body" style="border:1px solid #ccc;border-top:none;">
                         <div id="J_cheatProofTop" class="new_tip" style="display: block;">
                             <div>
                                 贴心提示：请勿设置与邮箱密码相同的账户登录密码或支付密码，防止不法分子窃取您的当当账户信息，<a href="javascript:；?p=22276">谨防诈骗</a>！
                             </div>
                         </div>
-                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
-                            <tbody>
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" id="loginfrom">
+                            <form action="http://10.31.158.62/dangdang/dd/src/login.html">
                                 <tr>
                                     <td class="t">手机号码</td>
                                     <td class="z_index2">
@@ -136,13 +136,13 @@
                                         <span id="J_tipMobile" class="cue warn"></span>
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr style="display:none">
                                     <!-- 图形验证码 -->
                                     <td class="t j-vcode">验证码</td>
                                     <td class="j-vcode">
                                         <input class="text pin" type="text" id="txt_vcode" name="txt_vcode" autocomplete="off" placeholder="请输入验证码" maxlength="4" tabindex="5">
                                         <a class="code_pic" id="vcodeImgWrap" name="change_code_img" href="javascript:void(0);">
-                                            <img id="imgVcode" title="点击更换验证码" alt="点击更换验证码" width="84" height="37" src="https://login.dangdang.com/p/tmp_proxy.php?t=1562659505965">
+                                            <!-- <img id="imgVcode" title="点击更换验证码" alt="点击更换验证码" width="84" height="37" src="https://login.dangdang.com/p/tmp_proxy.php?t=1562659505965"> -->
                                         </a>
                                         <a id="vcodeImgBtn" name="change_code_link" class="code_picww" href="javascript:void(0);">换张图</a>
                                         <span id="spn_vcode_ok" class="icon_yes pin_i" style="display: none;"></span>
@@ -172,11 +172,11 @@
                                 </tr>
                                 <tr>
                                     <td class="t">&nbsp;</td>
-                                    <td><a id="J_submitRegister" href="javascript:void(0);" class="btn_login" tabindex="10">立即注册</a><a id="J_submitRegisterUnclick" style="display: none;" class="btn_login">注册中...</a></td>
+                                    <td><a id="J_submitRegister" href="javascript:;" class="btn_login" tabindex="10">立即注册</a><a id="J_submitRegisterUnclick" style="display: none;" class="btn_login">注册中...</a></td>
                                 </tr>
-                            </tbody>
+                            </form>
                         </table>
-                    </div>
+                    </fieldset>
                 </div>
             </div>
         </div>

@@ -156,7 +156,7 @@
 
 ! function($) {
     //楼梯效果
-    let $lc = $('.bd_auto').children('.storey_two,.storey_four,.storey_five,.storey_six');
+    let $lc = $('.bd_auto').find('.storey_two,.storey_four,.storey_five,.storey_six');
 
     $(window).on('scroll', function() {
         let $scrollTop = $(window).scrollTop();
@@ -186,7 +186,7 @@
     // console.log($('.storey_four').offset().top)
     // console.log($('.storey_five').offset().top)
     // console.log($('.storey_six').offset().top)
-    // console.log($lc.length);
+    console.log($lc);
 
     $('.toge').on('click', function() {
         $(this).addClass('active').siblings().removeClass('active');

@@ -168,7 +168,7 @@ a:hover {
 .register_box .head .dd_more a.home {
     padding-left: 16px;
     margin-right: 15px;
-    background: url(../images/icon_20150706.png) 0 2px no-repeat;
+    background: url(../../img/icon_20150706.png) 0 2px no-repeat;
 }
 
 .register_box .head .dd_more a:hover {
@@ -334,7 +334,7 @@ a:hover {
 }
 
 .register_box .prompt .icon {
-    background: url(../images/icon_20150706.png) 0 -60px no-repeat;
+    background: url(../../img/icon_20150706.png) 0 -60px no-repeat;
 }
 
 .register_box .icon_yes,
@@ -343,7 +343,7 @@ a:hover {
     margin-top: 14px;
     width: 16px;
     height: 16px;
-    background: url(../images/icon_20150706.png) 0 -40px no-repeat;
+    background: url(../../img/icon_20150706.png) 0 -40px no-repeat;
 }
 
 .register_box .icon_wrong {
@@ -539,7 +539,7 @@ a:hover {
     vertical-align: middle;
     width: 28px;
     height: 28px;
-    background: url(../images/icon_20150706.png) 0 -80px no-repeat;
+    background: url(../../img/icon_20150706.png) 0 -80px no-repeat;
     margin: 0 10px 0 0;
 }
 
