@@ -2,11 +2,13 @@
 	
 	include "conn.php";
 
-	$result=mysql_query("select * from suibian");
+	$result=$conn->query("select * from suibian");
 	
 	$wronglist=array();
-	for ($i=0; $i < mysql_num_rows($result); $i++) { 
-		$wronglist[$i]=mysql_fetch_array($result,MYSQL_ASSOC);
+	for ($i=0; $i < $result->num_rows; $i++) { 
+		$wronglist[$i]=$result->fetch_assoc();
 	}
 
 	echo json_encode($wronglist);
+
+

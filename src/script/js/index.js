@@ -34,6 +34,50 @@
 
         });
     });
+
+    //独家特供
+    $.ajax({
+        url: 'http://10.31.158.62/dangdang/dd/php/dangdangdata.php',
+        dataType: 'json'
+    }).done(function(data) { //data:后端返回的和id对应的数据
+        console.log(data);
+
+        var $html = '<ul>';
+        $.each(data, function(index, value) {
+            $html += `
+			<li>
+                <a title="${value.title}" class="img" href="details.html?sid=${value.id}" target="_blank">
+                    <img src="${value.img1}" alt="details.html?sid=${value.title}">
+                </a>
+                <p class="name" ddt-src="24198400">
+                    <a title="${value.title}" href="details.html?sid=${value.id}" target="_blank" style=" ">${value.title}</a>
+                </p>
+                <span class="num_logo">当当独家特供</span>
+                <p class="price">
+                <span class="rob">
+                    <span class="sign">¥</span>
+                    <span class="num">${value.num}</span>
+                    <span class="tail">${value.tail}</span>
+                </span>
+                <span class="price_r">
+                    <span class="sign">¥</span>
+                    <span class="num">${value.num1}</span>
+                    <span class="tail">${value.tail1}</span>
+                </span>
+                </p><div class="icon_pop"></div>            
+            </li>
+			`;
+        });
+        $html += '</ul>';
+        $('#component_403758__5206_5185__5185').html($html);
+
+        console.log($html)
+            // console.log(data.id)
+    });
+
+
+
+
 }(jQuery);
 
 
@@ -171,7 +215,7 @@
 
         $lc.each(function(index, element) {
             let $lctop = $lc.eq(index).offset().top;
-            console.log($lctop);
+            // console.log($lctop);
 
             if ($lctop >= $scrollTop - 500) {
                 $('.toge').removeClass('active');
@@ -186,7 +230,7 @@
     // console.log($('.storey_four').offset().top)
     // console.log($('.storey_five').offset().top)
     // console.log($('.storey_six').offset().top)
-    console.log($lc);
+    // console.log($lc);
 
     $('.toge').on('click', function() {
         $(this).addClass('active').siblings().removeClass('active');
