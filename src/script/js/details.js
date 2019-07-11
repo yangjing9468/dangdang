@@ -2,47 +2,40 @@
     //1.获取sid
     // var picid = location.search.substring(1).split('=')[1];
 
-
+    var picid = location.search.substring(1).split('=')[1];
 
     //2.将当前的id传给后端获取对应的数据
     $.ajax({
-        url: 'http://10.31.158.62/dangdang/dd/php/dangdangdata.php',
+        url: 'http://10.31.158.62/dangdang/dd/php/details.php',
+        data: {
+            sid: picid
+        },
         dataType: 'json'
     }).done(function(data) { //data:后端返回的和id对应的数据
         console.log(data);
 
-        var $html = '<ul>';
-        $.each(data, function(index, value) {
-            $html += `
-			<li>
-                <a title="${value.title}" class="img" href="details.html?sid=${value.id}" target="_blank">
-                    <img src="${value.img1}" alt="details.html?sid=${value.title}">
-                </a>
-                <p class="name" ddt-src="24198400">
-                    <a title="${value.title}" href="details.html?sid=${value.id}" target="_blank" style=" ">${value.title}</a>
-                </p>
-                <span class="num_logo">当当独家特供</span>
-                <p class="price">
-                <span class="rob">
-                    <span class="sign">¥</span>
-                    <span class="num">${value.num}</span>
-                    <span class="tail">${value.tail}</span>
-                </span>
-                <span class="price_r">
-                    <span class="sign">¥</span>
-                    <span class="num">${value.num1}</span>
-                    <span class="tail">${value.tail1}</span>
-                </span>
-                </p><div class="icon_pop"></div>            
-            </li>
-			`;
-        });
-        $html += '</ul>';
-        $('#component_403758__5206_5185__5185').html($html);
+        $('#largePic').attr('src', data.img1);
+        $('#big_pic').attr('src', data.url);
+        $('#largePic').attr('sid', data.sid);
+        $('.head_title_name').html(data.title);
+        $('#dd-price').html(data.num);
+        $('#detailtitle').html(data.title);
 
-        console.log($html)
-            // console.log(data.id)
+        var arr = data.spic.split(',');
+        console.log(arr);
+
+
+        var str = '';
+        $.each(arr, function(index, value) {
+
+            str += '<li><img src="' + value + '"/></li>';
+        });
+
+        // console.log(str)
+        $('#main-img-slider').html(str);
     });
+
+
 
     //3.放大镜效果
     // ! function() {

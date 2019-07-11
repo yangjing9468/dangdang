@@ -2,11 +2,8 @@
 	
 	include "conn.php";
 
-	$result=$conn->query("select * from suibian");
-	
-	$wronglist=array();
-	for ($i=0; $i < $result->num_rows; $i++) { 
-		$wronglist[$i]=$result->fetch_assoc();
-	}
+	$sid=$_GET["sid"];
 
-	echo json_encode($wronglist);
+	$result=$conn->query("select * from suibian where id=$sid");
+	
+	echo json_encode($result->fetch_assoc());
