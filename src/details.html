@@ -13,6 +13,12 @@
             width: 54px;
             height: 54px;
         }
+        
+        #bf {
+            position: absolute;
+            left: 312px;
+            top: 10px;
+        }
     </style>
 
 
@@ -343,10 +349,11 @@
                 <!-- 大图区开始 -->
 
                 <div class="pic" id="largePicDiv">
-                    <a href="javascript:;" dd_name="大图" class="img">
-                        <img id="largePic" alt="穿过历史线，吃透小古文（当当独家签名+专享20节小古文王芳范读音频）
+                    <a href="javascript:;" dd_name="大图" class="img spic">
+                        <img id="largePic" class="smallpic" alt="穿过历史线，吃透小古文（当当独家签名+专享20节小古文王芳范读音频）
 当当独家签名版（亲笔签名）+专享 20节小古文原典范读音频（扫书签二维码获得王芳倾情献声课），高中及中小学生走进小古文，认识文言文的必备读物。新书上市5天，销量突破13万套（65万册）！" src="#" width="320" height="320">
-                        <div id="moveMask" class="zoom_pup" style="position: absolute;background: url(images/zoom_pup.png);display:none"></div>
+                        <!-- <div id="moveMask" class="zoom_pup" style="position: absolute;background: url(./img/zoom_pup.png);display:none"></div> -->
+                        <div id="sf"></div>
                     </a>
                     <div style="display:none" id="promo-icon-tpl">
                         <script type="text/html" data-type="flash">
@@ -365,8 +372,8 @@
 
                     <a href="javascript:;" class="icon_online" target="_blank" id="read-online" style="display:none" dd_name="免费在线读">免费在线读</a>
 
-                    <div class="big_pic" style="display: none;" id="detailPicDiv">
-                        <img src="#" alt="穿过历史线，吃透小古文（当当独家签名+专享20节小古文王芳范读音频）
+                    <div id="bf" style="display: none;" id="detailPicDiv">
+                        <img src="#" id="big_pic" class="bpic" alt="穿过历史线，吃透小古文（当当独家签名+专享20节小古文王芳范读音频）
 当当独家签名版（亲笔签名）+专享 20节小古文原典范读音频（扫书签二维码获得王芳倾情献声课），高中及中小学生走进小古文，认识文言文的必备读物。新书上市5天，销量突破13万套（65万册）！" height="800" width="800" id="detailPic">
                     </div>
 
